@@ -1,0 +1,5 @@
+// Write a SOQL SELECT statement to retrieve the Company ,Name, Email fields for all Lead records 
+//where the Status is Open - Not Contacted. 
+//Sort the result by Name
+
+SELECT Company, Name, Email, Status FROM Lead  WHERE (Status='Open - Not Contacted') ORDER BY Name

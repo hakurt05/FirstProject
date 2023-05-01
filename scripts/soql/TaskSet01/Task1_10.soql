@@ -1,0 +1,11 @@
+ //Write a SOQL SELECT statement to retrieve all records from the Lead object, including Name ,LeadSource, Title, Company
+   //- Filter the result using below criteria 
+   //- AND LeadSource is not one of these
+    // - Web
+     //- Purchase List
+     //- Event
+     //- Phone Inquiry 
+
+SELECT Name, LeadSource, Title, Company
+  FROM Lead
+  WHERE LeadSource != 'Web' AND LeadSource != 'Purchased List' AND LeadSource != 'Phone Inquiry'

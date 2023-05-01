@@ -1,0 +1,6 @@
+   //Write a SOQL SELECT statement to retrieve the Name,Rating,AnnualRevenue and Industry fields for all **Account** records 
+  // - where the Rating is either Hot or Warm.
+  // - sort the result by CreatedDate Descending order
+
+  SELECT Name,Rating,AnnualRevenue,Industry  FROM Account 
+  WHERE Rating ='Hot' OR Rating='Warm' ORDER BY CreatedDate DESC 

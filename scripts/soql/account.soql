@@ -1,0 +1,20 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+// Get All the Account Name
+// and Name and Email of Contacts assiciated with those account
+// from Account Object
+
+//SELECT Name, (SELECT Name,Email FROM Contacts)
+//FROM Account 
+//ORDER BY CreatedDate ASC
+
+  // Get All the Account Name
+// and Subject  of Cases assiciated with those account
+// from Account Object
+
+SELECT Name, (SELECT Subject FROM Cases)
+FROM Account 
+ORDER BY CreatedDate ASC

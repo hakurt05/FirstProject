@@ -1,0 +1,49 @@
+
+// AGGREGATE FUNCTIONS
+
+SELECT COUNT(Id), COUNT_DISTINCT(Name), SUM(Amount), MAX(Amount), MIN(Amount), AVG(Amount)
+FROM Opportunity
+
+// Do Same for Account Object
+//SELECT COUNT(Id), COUNT_DISTINCT(Name), SUM(AnnualRevenue), MAX(AnnualRevenue), MIN(AnnualRevenue), AVG(AnnualRevenue)
+//FROM Account
+
+// Count The Opportunities In Closed Won Stage
+
+//SELECT StageName,COUNT(Id), SUM(Amount) FROM Opportunity GROUP BY StageName='Closed Won'
+
+
+// If you use aggreate function with any additional field in Select Line
+// It must be Grouped by that field or it will not work
+// Anytime you add any new field other than the field in group by, it will not work
+// as long as it does not show up in group by field list
+
+// Get the count of Leads of each LeadSource
+
+//SELECT LeadSource,COUNT(Id) FROM Lead GROUP BY LeadSource
+// Get the count of Leads of each State
+//SELECT State,COUNT(Id) FROM Lead GROUP BY State
+
+// Get the count of Leads of each State
+// only Return the row if the count more than 2
+
+//SELECT State, COUNT(id) FROM Lead GROUP BY State HAVING COUNT(Id)=2 
+
+// Get the count of Leads of each Status
+// only Return the row if the count less than 5
+
+// SELECT Status,Count(Id) FROM Lead GROUP BY Status HAVING COUNT(Id)<5
+
+// Get All the count of Account
+// The sum of AnnualRevenue
+ //for each Rating (Hot, Cold Warm, NULL)
+ // BEFORE EVEN USING GROUP BY WITH WHERE
+//SELECT Rating, Count(Id),SUM(AnnualRevenue)
+//FROM Account
+//GROUP BY Rating
+//HAVING Rating!=NULL
+
+//SELECT Rating, Count(Id),SUM(AnnualRevenue)
+//FROM Account
+//WHERE Rating!=NULL
+//GROUP BY Rating

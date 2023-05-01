@@ -1,0 +1,69 @@
+//SELECT Name, ApiVersion, Body
+//FROM ApexTrigger
+
+//SELECT Id, Username, FirstName, LastName
+//FROM User
+
+//SELECT Id, Username, FirstName, LastName, ProfileId
+//FROM User
+
+// Feel free to use SOQL Building(by flipping the page)
+// to observe what's the correct Object name and fields names 
+
+// Get All the Profiles Id, Name fields 
+// if the profile name is 
+// System Administator, Standard User , Standard Platform User
+
+
+// Get All the Roles , Id, Name From Role Standard Object 
+// Get all the RecordType, ID, NAme from recordtype Standard Object
+
+// Get All the Roles , Id, Name From Group Standard Object 
+// this is where all public groups, queues stored
+
+//SELECT Name,Id
+  //FROM Profile WHERE name IN('System Administrator','Standard User','Standard Platform User')
+
+//SELECT Id, Name, DeveloperName
+
+
+//SELECT Name, DeveloperName
+  //FROM RecordType
+
+//SELECT  Id, Author__c, Price__c, Description__c, Year__c
+//FROM Book__c
+//WHERE Price__c != NULL OR Description__c !=NULL
+
+//SELECT FIELDS(All)
+//FROM Book__c
+//LIMIT 18
+
+//PARTIAL CONDITION , OR FUZZY SEARCH
+
+//RELATIONAL OPERATOR : > >= < <= != IN NOT IN
+
+//LIKE , 'A%' it matches AA A Adam ABcd12...  ( WILD CARD, it can represent 0 or more characters )
+
+//SELECT FirstName,LastName  FROM Contact
+// if firstname end with letter A we use '%A' then it matches joshua, Alba, 1234A
+//WHERE FirstName LIKE 'JO%'
+
+//SELECT FirstName, LastName
+  //FROM Contact
+ // WHERE FirstName LIKE '%A'
+ // if firstname start with A and end with A we use '%A%'
+/// Get all contacts First Name and LastName 
+// if FirstName starts with A and Ends with Y 
+// AND has exactly 4 Charcters (meaning there are 2 character in between A and Y)
+
+// We can use LIKE 'A__Y'  
+// it matches  Andy, Anny, Abcy, APZy, A12y,aXYy
+//SELECT FirstName, LastName
+ //FROM Contact
+ //WHERE FirstName LIKE 'A__Y'
+
+ SELECT Name,Closedate, StageName FROM Opportunity WHERE CreatedDate =  LAST_90_DAYS
+ORDER BY Closedate Desc
+
+SELECT FirstName,LastName FROM Contact WHERE CreatedDate = TODAY-3
+

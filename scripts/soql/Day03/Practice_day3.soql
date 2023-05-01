@@ -1,0 +1,57 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+// Get All the Account Name
+// and Name and Email of Contacts assiciated with those account
+// from Account Object
+
+//SELECT Name, (SELECT Name,Email FROM Contacts)
+//FROM Account 
+//ORDER BY CreatedDate ASC
+
+
+// Get All the Account Name
+// and Subject  of Cases assiciated with those account
+// from Account Object
+
+//SELECT Name, (SELECT Subject FROM Cases)
+//FROM Account 
+//ORDER BY CreatedDate ASC
+
+// Get All the Contact Name
+// and Case Subject,Status  of Cases assiciated with those account
+// from Contact Object
+
+//SELECT Name ,  (SELECT Subject, Status FROM Cases)
+//FROM Contact  
+
+
+// Get All the Contact Name
+// and Book Name, Price of Books assiciated with those Contact
+// from Contact Object
+
+//SELECT  Name, (SELECT Name, Price__c FROM Books__r)
+//FROM Contact
+
+ //Get the name of the account if it has child contact with LastName 'Forbes'
+ //Step1 SELECT AccountId FROM Contact  WHERE LastName = 'Forbes' 
+ // Step2 
+ //SELECT Name FROM Account WHERE  your AccountId
+ //FINAL STEP
+
+//SELECT Name  FROM Account WHERE Id IN ( SELECT AccountId FROM Contact  WHERE LastName LIKE 'Forbes')
+
+ //Get all the account names if the child contacts last name starts with 'F'
+ // Also Display all the contacts along with Account Name
+//SELECT Name , (SELECT FirstName,LastName  FROM Contacts WHERE LastName LIKE 'F%')
+// FROM Account WHERE Id
+ // IN ( SELECT AccountId FROM Contact  WHERE LastName LIKE 'F%')
+
+ //Get All The Accounts with Opportunity 
+ // Step 1
+ // SELECT Name,AccountId,Account.Name FROM Opportunity 
+
+ SELECT Name FROM Account 
+WHERE Id NOT IN ( SELECT AccountId  FROM Opportunity) AND

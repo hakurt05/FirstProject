@@ -1,0 +1,5 @@
+
+//Write a SOQL SELECT statement to
+//retrieve the count of Boat records where the RecordType.Name is Speedboat.
+
+SELECT COUNT(Name) FROM Boat__C WHERE RecordType.Name='SpeedBoat'

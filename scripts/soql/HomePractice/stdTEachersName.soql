@@ -1,0 +1,19 @@
+//Id teach = [Select Name FROM Teacher__c WHERE Name='Hakan Ekici'].Id;
+
+//Get all the Opportunities with no Parent Account association (AccountId is empty)
+//and store it in the list called orphanOpps. 
+
+
+List<Student__c> std=[SELECT Name, Last_Name__c,Department__c FROM Student__c WHERE Department__c ='5A'];
+//Add All the orphanOpps under Account with name Super Parent.
+for(Student__c each : std) {
+    if(each.Department__c=='5/A'){
+each.Teacher__c='Hakan Ekici';
+}
+// perform DML OPERATION
+update std;
+}
+
+
+
+

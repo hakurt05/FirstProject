@@ -1,0 +1,1 @@
+EmailManager.sendMail('ekicihakan@hotmail.com', 'Email from Apex', 'Body from Apex') ;
