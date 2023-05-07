@@ -3,7 +3,7 @@ System.debug('Starting the code');
 
 try {
     
-Account a= new Account(Name='ABC');
+Account a= new Account(Name='');
 Insert a;
 
 } catch (DmlException e) {
