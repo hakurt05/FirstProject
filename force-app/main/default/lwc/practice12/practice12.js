@@ -1,7 +1,16 @@
-import { LightningElement } from "lwc";
-export default class Practice11 extends LightningElement {
+import { LightningElement } from 'lwc';
+
+export default class Practice12 extends LightningElement {
+
+
+
 
     searchKey = ''; 
+
+    columns = [
+        { label: 'Food Name', fieldName: 'foodName' },
+        { label: 'Calorie', fieldName: 'calories' },
+    ];
 
     foodArray = [
         { id: 1, foodName: 'Pizza', calories: 285 },
@@ -30,10 +39,3 @@ export default class Practice11 extends LightningElement {
 
 
 }
-
-/**
- let filteredFoods = foodArray.filter(each =>
-    each.foodName.toLowerCase().includes( searchKey.toLowerCase() )
-);
-
- */
